@@ -1,0 +1,47 @@
+Package: endura-build-tools
+Version: 0.1.3.73d4117
+Architecture: amd64
+Maintainer: Infrared Security, LLC.
+Installed-Size: 10666
+Filename: ./endura-build-tools_0.1.3.73d4117_amd64.deb
+Size: 2979776
+MD5sum: 23f1f1da82a7f4d129c584c4fbb0c227
+SHA1: 91b80d26d1aa4f64298f4b968aec9e1951dd4949
+SHA256: cc0ea7460a089896ec4e6907e3c936de5cad2dc8c096a11337ba4ec09e556747
+Section: Development
+Priority: optional
+Description: build tools
+ # endura-build-tools
+ .
+ TBD
+ .
+ .
+ ## Environment Settings
+ .
+ **ENDURA_BATCHER_AUTOFLUSH**: true/false (default: false)
+ **ENDURA_LOG_LEVEL**: level of logging (default: info, cli supported)
+ **ENDURA_LOG_FILE**: save logs to this file (default: undefined, cli supported)
+ **ENDURA_TEAM_SERVER**: https://your.team.server (default: undefined, cli
+ supported)
+ .
+ ## ISSUE: LSM Not Enabled on Target Platform
+     - Alpine 3, Oracle 9, Ubuntu 24
+     - adopt process killing on 'enforce' mode?
+ .
+ ## ISSUE: Who/what is allowed to kill our own process? use our socket?
+     - Use a special group?
+ .
+ ## BUG: mode derive failed
+ .
+ - not all events getting processed before job is removed
+ - temporary workaround in job stop command:
+ .
+     // FIXME: best effort to allow processing of remaining events
+     std::thread::sleep(Duration::from_secs(3));
+ .
+ ## QUESTION: musl threading performance issues
+ .
+ - see:
+ https://www.linkedin.com/pulse/testing-alternative-c-memory-allocators-pt-2-musl-mystery-gomes/
+ - adopt mimalloc? already implemented. no metrics to assess impact!!
+
