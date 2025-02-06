@@ -1,13 +1,13 @@
 Package: endura-build-tools
-Version: 0.1.5.d70f6db
+Version: 0.1.7.f10315b
 Architecture: amd64
 Maintainer: Infrared Security, LLC.
-Installed-Size: 10641
-Filename: ./endura-build-tools_0.1.5.d70f6db_amd64.deb
-Size: 3008368
-MD5sum: 226523eef37809ef76e2dbb4cf7dca1b
-SHA1: b2117fc3702a41bd027526a91e7fc3b6f0cd1d10
-SHA256: 434b4c31c3f49338011b151bcda29424862dfd4274c28e5e089ad14461cf12bd
+Installed-Size: 10637
+Filename: ./endura-build-tools_0.1.7.f10315b_amd64.deb
+Size: 3007740
+MD5sum: 816ee001100dd25567133b49f30bb4b7
+SHA1: d9701cc298539c044acee43f1e2448e448730e68
+SHA256: 9a58d1574c6d266b1e94bca8ca987c3fed63693a006c06e5d0c463ebd7113c4c
 Section: Development
 Priority: optional
 Description: build tools
@@ -15,18 +15,14 @@ Description: build tools
  .
  TBD
  .
- .
  ## Environment Settings
  .
- **ENDURA_BATCHER_AUTOFLUSH**: true/false (default: false)
- **ENDURA_LOG_LEVEL**: level of logging (default: info, cli supported)
- **ENDURA_LOG_FILE**: save logs to this file (default: undefined, cli supported)
- **ENDURA_TEAM_SERVER**: https://your.team.server (default: undefined, cli
+ - **ENDURA_BATCHER_AUTOFLUSH**: true/false (default: false)
+ - **ENDURA_LOG_LEVEL**: level of logging (default: info, cli supported)
+ - **ENDURA_LOG_FILE**: save logs to this file (default: undefined, cli
  supported)
- .
- ## ISSUE: LSM Not Enabled on Target Platform
-     - Alpine 3, Oracle 9, Ubuntu 24
-     - adopt process killing on 'enforce' mode?
+ - **ENDURA_TEAM_SERVER**: https://your.team.server (default: undefined, cli
+ supported)
  .
  ## ISSUE: Who/what is allowed to kill our own process? use our socket?
      - Use a special group?
@@ -38,6 +34,13 @@ Description: build tools
  .
      // FIXME: best effort to allow processing of remaining events
      std::thread::sleep(Duration::from_secs(3));
+ .
+ ## BUG: SELinux permissions from container development
+ - running this seems to work: `sudo chcon -Rt container_file_t $(BASEDIR)
+ >/dev/null;`
+ - running in non-selinux envs causes the build to fail with errors like the
+ following in ubuntu: `chcon: can't apply partial context to unlabeled file
+ 'README.md'`
  .
  ## QUESTION: musl threading performance issues
  .
