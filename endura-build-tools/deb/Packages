@@ -1,13 +1,13 @@
 Package: endura-build-tools
-Version: 0.1.7.f10315b
+Version: 0.1.8.26001c1
 Architecture: amd64
 Maintainer: Infrared Security, LLC.
 Installed-Size: 10637
-Filename: ./endura-build-tools_0.1.7.f10315b_amd64.deb
-Size: 3007740
-MD5sum: 816ee001100dd25567133b49f30bb4b7
-SHA1: d9701cc298539c044acee43f1e2448e448730e68
-SHA256: 9a58d1574c6d266b1e94bca8ca987c3fed63693a006c06e5d0c463ebd7113c4c
+Filename: ./endura-build-tools_0.1.8.26001c1_amd64.deb
+Size: 3007524
+MD5sum: fc9c03569173823c401bb104cc407558
+SHA1: d6b77f90c8f7078309a6fbd346fb67bc5d2ad7a6
+SHA256: 6106bdf671cd8024ad4bf2895ef842d275f28a3e172e1b58988b3a6be6df0b7b
 Section: Development
 Priority: optional
 Description: build tools
