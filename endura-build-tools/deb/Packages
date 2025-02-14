@@ -1,13 +1,13 @@
 Package: endura-build-tools
-Version: 0.1.8.ed2a3ff
+Version: 0.1.9.6ff6baf
 Architecture: amd64
 Maintainer: Infrared Security, LLC.
-Installed-Size: 10637
-Filename: ./endura-build-tools_0.1.8.ed2a3ff_amd64.deb
-Size: 3007704
-MD5sum: b078bb6649425818740453b7fa6b1379
-SHA1: ae1ae699a259acc5f798e909ca9f8527d83413da
-SHA256: eee9f757e1616d3c01f0d2e86d56e6250482a341c3f0c8a2c1301927b6864afc
+Installed-Size: 9644
+Filename: ./endura-build-tools_0.1.9.6ff6baf_amd64.deb
+Size: 2673812
+MD5sum: 66a5800a620bcc3bd36b5b7b576844c1
+SHA1: a0264f42ca976bcf489c88ea46fd406fe0142c1e
+SHA256: ecdb1bf75deb98ae575f528b4434e8f3c9b34c0aadb492a6a4c6303568e83645
 Section: Development
 Priority: optional
 Description: build tools
@@ -23,6 +23,24 @@ Description: build tools
  supported)
  - **ENDURA_TEAM_SERVER**: https://your.team.server (default: undefined, cli
  supported)
+ .
+ ## eBPF Compatability Status
+ .
+ - Alpine: fails
+ .
+ <!-- # 2025-02-09T01:11:52.642742Z  INFO          main endura::bpf: attaching
+ program: security_task_free
+ # 2025-02-09T01:11:53.019835Z ERROR          main endura: command failed
+ error=server start failed
+ #
+ # Caused by:
+ #     0: ebpf run
+ #     1: attach fentry "security_task_free" source=Some(Error { context: "ebpf
+ run", source: attach fentry "security_task_free" }) backtrace=disabled
+ backtrace
+ # [error] server did not start successfully
+ # 2025-02-09T01:12:07.725980Z ERROR main endura: command failed error=stop
+ server failed -->
  .
  ## ISSUE: Who/what is allowed to kill our own process? use our socket?
      - Use a special group?
