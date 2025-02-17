@@ -4,10 +4,10 @@ Architecture: amd64
 Maintainer: Infrared Security, LLC.
 Installed-Size: 9872
 Filename: ./endura-build-tools_0.1.12.f534f44_amd64.deb
-Size: 2689128
-MD5sum: 3ea29ffc55b343dda0bd1799f7f957d1
-SHA1: 13f733d39da578f381eefacd7b78dbd2f48a630e
-SHA256: 4234ef9bae56faefdea2226cac7326173ef6191ef40399d75fbf958aa7ab8527
+Size: 2689456
+MD5sum: da647b341ef6d9f7dedc3b987a906510
+SHA1: 3414ca9aefc207d396643d7aa5a7bf0ff383a2ae
+SHA256: ea71fafa529b9e84928c27b8bd22d977c2c0d934d10db2ce89078fe136618ae7
 Section: Development
 Priority: optional
 Description: build tools
