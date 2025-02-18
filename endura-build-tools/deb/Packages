@@ -1,13 +1,13 @@
 Package: endura-build-tools
-Version: 0.1.13.bf7babb
+Version: 0.1.13.e2eeb5e
 Architecture: amd64
 Maintainer: Infrared Security, LLC.
-Installed-Size: 9900
-Filename: ./endura-build-tools_0.1.13.bf7babb_amd64.deb
-Size: 2686436
-MD5sum: 0bef07fd58d9891c51a6c61a7411921e
-SHA1: c0e6b55d5ea494dcb9b130c28f312bd67f502735
-SHA256: e635d7dfedc9e755b37af901f0c5cd305d528255bad0bca76f4df3a8427de59a
+Installed-Size: 10128
+Filename: ./endura-build-tools_0.1.13.e2eeb5e_amd64.deb
+Size: 2702704
+MD5sum: 4aa7e7fc4a3836c654b8481cec28fd1d
+SHA1: 09084151e868884fd9af98a3a272a9773bed2e3c
+SHA256: 9bcfb0ecd6d550dc24408c26eebe96e57eee15304049f8ba89c232285f209b03
 Section: Development
 Priority: optional
 Description: build tools
@@ -24,26 +24,20 @@ Description: build tools
  - **ENDURA_TEAM_SERVER**: https://your.team.server (default: undefined, cli
  supported)
  .
- ## eBPF Compatability Status
+ ## ADDITIONAL CHECKS:
  .
- - Alpine: fails
+ - Inventory of libraries being used
+ - Execution of deleted binaries: check if inode == 0
+ - Fileless Execution:
+     -> track fds created via memfd_create per process
+     -> check if filename starts with "/proc/self/fd/" or "/dev/fd/" indicating
+ executing from fd
+     -> extract fd from filename and see if found within "track fds" map
  .
- <!-- # 2025-02-09T01:11:52.642742Z  INFO          main endura::bpf: attaching
- program: security_task_free
- # 2025-02-09T01:11:53.019835Z ERROR          main endura: command failed
- error=server start failed
- #
- # Caused by:
- #     0: ebpf run
- #     1: attach fentry "security_task_free" source=Some(Error { context: "ebpf
- run", source: attach fentry "security_task_free" }) backtrace=disabled
- backtrace
- # [error] server did not start successfully
- # 2025-02-09T01:12:07.725980Z ERROR main endura: command failed error=stop
- server failed -->
  .
  ## ISSUE: Who/what is allowed to kill our own process? use our socket?
-     - Use a special group?
+     [x] only root users not bound to a job can kill endura
+     -> only root users not bound to a job can interact with socket
  .
  ## BUG: mode derive failed
  .
